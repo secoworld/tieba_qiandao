@@ -118,17 +118,19 @@ if __name__ == '__main__':
         err = 0
         tieba_onekey()
         time.sleep(5)
-        for name in result:
-            #print(i)
-            jsons =tieba_qiandao(name)
-            if jsons['error'] != '':
-                print('%-10s : 签到失败      原因：%s' % (name, jsons['error']))
-                err += 1
-            else:
-                print('%-10s : 签到成功' % name)
-                succ += 1
-            time.sleep(0.5)      #为防止贴吧验证码，所以每签到一个贴吧，休息一段时间,
-                                # 签到20个就需要验证
+
+        while err == 0:
+            for name in result:
+                #print(i)
+                jsons =tieba_qiandao(name)
+                if jsons['error'] != '':
+                    print('%-10s : 签到失败      原因：%s' % (name, jsons['error']))
+                    err += 1
+                else:
+                    print('%-10s : 签到成功' % name)
+                    succ += 1
+                time.sleep(0.5)      #为防止贴吧验证码，所以每签到一个贴吧，休息一段时间,
+                                    # 签到20个就需要验证
     except  e:
         print('退出贴吧签到!')
         print(e)
