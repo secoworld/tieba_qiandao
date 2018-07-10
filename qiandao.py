@@ -18,7 +18,7 @@ header = {
     'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36'
 }
 #从浏览器中获取的Cookie
- header['Cookie'] = "your cookie"          #加入你自己的cookie，不会查找的自行Google
+header['Cookie'] = "your cookie"          #加入你自己的cookie，不会查找的自行Google
 
 tebs =['cd5e9cf18f4d11f91510816114','ce3fd8665a87554b1510379837','f1323634f7a7e0e91510816573']
 
