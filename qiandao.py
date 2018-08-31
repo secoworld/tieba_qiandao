@@ -131,8 +131,8 @@ if __name__ == '__main__':
                     succ += 1
                 #time.sleep(0.5)      #为防止贴吧验证码，所以每签到一个贴吧，休息一段时间,
                                     # 签到20个就需要验证
-    except  :
-        print("未知错误，即将退出")
+    except  Exception as e:
+        print("未知错误 %s，即将退出 " %(e))
         print('退出贴吧签到!')
        
     finally:
