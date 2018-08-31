@@ -131,9 +131,10 @@ if __name__ == '__main__':
                     succ += 1
                 #time.sleep(0.5)      #为防止贴吧验证码，所以每签到一个贴吧，休息一段时间,
                                     # 签到20个就需要验证
-    except  e:
+    except  :
+        print("未知错误，即将退出")
         print('退出贴吧签到!')
-        print(e)
+       
     finally:
         with open('tieba.txt','a') as f:
             f.write(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()) )
