@@ -18,6 +18,7 @@ header = {
     'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36'
 }
 #从浏览器中获取的Cookie
+
 header['Cookie'] = "BAIDUID=86621B730BE1B8DDB30BC86D1A85A323:FG=1; BIDUPSID=86621B730BE1B8DDB30BC86D1A85A323; PSTM=1510202295; TIEBA_USERTYPE=a0f753280142945b5a4bbacc; TIEBAUID=75e4e6f45b39ef6e8f3a84d2; bdshare_firstime=1510218040536; FP_UID=e08af8562ccadff9846439e077c09364; BDUSS=pnbWtQUUszaXhDOUJxZGpGMXRUWW5iflBXVzFuUVZpTFZkNnRINTdVcDItaXRhSVFBQUFBJCQAAAAAAAAAAAEAAAAhwRBbztJnb29nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHZtBFp2bQRaZV; STOKEN=4e4b7446008e3da9c8d89852d35118e62498b8b6ceea3d08d9b478d905c00498; rpln_guide=1; pgv_pvi=3431114752; pgv_si=s4384706560; BDRCVFR[korV8YiOINC]=9xWipS8B-FspA7EnHc1QhPEUf; PSINO=1; H_PS_PSSID=; FP_LASTTIME=1510376661933; fixed_bar=1; wise_device=0; Hm_lvt_287705c8d9e2073d13275b18dbd746dc=1510282024,1510282950,1510376659,1510376874; Hm_lpvt_287705c8d9e2073d13275b18dbd746dc=1510376874"          #加入你自己的cookie，不会查找的自行Google
 
 tebs =['cd5e9cf18f4d11f91510816114','ce3fd8665a87554b1510379837','f1323634f7a7e0e91510816573']
@@ -131,9 +132,11 @@ if __name__ == '__main__':
                     succ += 1
                 #time.sleep(0.5)      #为防止贴吧验证码，所以每签到一个贴吧，休息一段时间,
                                     # 签到20个就需要验证
+
     except Exception as e:
+        print("未知错误，即将退出")
         print('退出贴吧签到!')
-        print(e)
+       
     finally:
         with open('tieba.txt','a') as f:
             f.write(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()) )
